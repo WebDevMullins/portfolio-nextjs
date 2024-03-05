@@ -1,6 +1,6 @@
 import { Image, Link } from '@nextui-org/react'
 
-import { skills } from '@/lib/skills'
+import { skills } from '@/constants/skills'
 
 export default function Resume() {
 	return (

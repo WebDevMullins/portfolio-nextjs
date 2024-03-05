@@ -1,5 +1,5 @@
 'use client'
-import { projects } from '@/lib/projects'
+import { projects } from '@/constants/projects'
 import { Image, Link } from '@nextui-org/react'
 import { GithubIcon } from 'lucide-react'
 
