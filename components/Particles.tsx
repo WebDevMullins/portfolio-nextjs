@@ -93,7 +93,14 @@ const ParticleEffect = () => {
 
 	// Conditionally rendering the Particles component based on initialization status
 	if (init) {
-		return <Particles className='h-screen' loaded={particlesLoaded} options={options} />
+		return (
+			<Particles
+				className='h-screen'
+				loaded={particlesLoaded}
+				// @ts-ignore
+				options={options}
+			/>
+		)
 	}
 
 	// Returning an empty fragment if not yet initialized
