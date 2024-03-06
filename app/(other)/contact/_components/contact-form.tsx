@@ -120,7 +120,7 @@ const ContactForm = () => {
 						isRequired
 						type='text'
 						label='Message'
-						labelPlacement='inside'
+						labelPlacement='outside'
 						placeholder='Your message'
 						isInvalid={!!errors.message?.message}
 						errorMessage={errors.message?.message as ReactNode}
