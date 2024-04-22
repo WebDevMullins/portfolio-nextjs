@@ -2,7 +2,7 @@ interface ContactFormEmailProps {
 	name: string
 	email: string
 	message: string
-	company: string
+	company?: string | null
 }
 
 export const ContactFormEmail: React.FC<Readonly<ContactFormEmailProps>> = ({
@@ -16,8 +16,12 @@ export const ContactFormEmail: React.FC<Readonly<ContactFormEmailProps>> = ({
 		<p>
 			From <strong>{name}</strong> at {email}
 		</p>
-		<h2>Company:</h2>
-		<p>{company}</p>
+		{company && (
+			<>
+				<h2>Company:</h2>
+				<p>{company}</p>
+			</>
+		)}
 		<h3>Message:</h3>
 		<p>{message}</p>
 	</div>

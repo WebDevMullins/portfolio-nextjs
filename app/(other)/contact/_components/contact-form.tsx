@@ -14,7 +14,7 @@ import { ContactFormSchema } from '@/lib/schema'
 type ContactFormInputs = z.infer<typeof ContactFormSchema>
 
 const options = {
-	label: 'text-black/50 dark:text-white/90',
+	label: '',
 	input: [
 		'bg-transparent',
 		'text-black/90 dark:text-white/90',
@@ -104,7 +104,7 @@ const ContactForm = () => {
 				<div className='h-[76px] w-full'>
 					<Input
 						{...register('company')}
-						isRequired
+						// isRequired
 						type='text'
 						label='Company'
 						labelPlacement='outside'

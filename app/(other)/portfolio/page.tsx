@@ -23,7 +23,9 @@ export default function Portfolio() {
 										'mx-auto max-w-4xl ' +
 										(index % 2 === 0 ? 'md:order-first' : 'md:order-last')
 									}>
-									<Link href={project.href}>
+									<Link
+										href={project.href}
+										target='_blank'>
 										<Image
 											alt='aiconic'
 											src={project.img}
@@ -42,7 +44,9 @@ export default function Portfolio() {
 											className='text-xs font-semibold'>
 											{project.skills}
 										</div>
-										<Link href={project.github}>
+										<Link
+											href={project.github}
+											target='_blank'>
 											<GithubIcon className='text-white' />
 										</Link>
 									</div>

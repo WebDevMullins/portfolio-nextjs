@@ -4,12 +4,12 @@ import { skills } from '@/constants/skills'
 
 export default function Resume() {
 	return (
-		<section className='flex flex-col items-center justify-center max-w-screen-xl px-4 gap-10'>
-			<h1 className='text-3xl md:text-5xl font-extrabold capitalize text-center'>
+		<section className='flex max-w-screen-xl flex-col items-center justify-center gap-10 px-4'>
+			<h1 className='text-center text-3xl font-extrabold capitalize md:text-5xl'>
 				Creating apps with modern technologies
 			</h1>
 			{/* Section for displaying skills with images */}
-			<section className='flex flex-wrap max-w-screen-lg justify-center gap-10 pt-10 items-center'>
+			<section className='flex max-w-screen-lg flex-wrap items-center justify-center gap-10 pt-10'>
 				{/* Mapping over the skills data to display skill images */}
 				{skills.map((skill, index) => (
 					<Image
@@ -24,8 +24,8 @@ export default function Resume() {
 			</section>
 			{/* Link for downloading the resume PDF */}
 			<Link
-				href='/files/resume.pdf'
-				download='Brandon Mullins Resume.pdf'
+				href='/files/Full-Stack_Web_Developer_Brandon_Mullins.pdf'
+				download='Full-Stack_Web_Developer_Brandon_Mullins.pdf'
 				color='foreground'
 				isBlock
 				size='lg'

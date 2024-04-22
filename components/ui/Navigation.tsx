@@ -13,6 +13,7 @@ import {
 import { ComputerIcon, GithubIcon, LinkedinIcon, MailIcon } from 'lucide-react'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
+import { set } from 'zod'
 
 const Navigation = () => {
 	// Using react-router-dom's useLocation hook to get the current path
@@ -30,6 +31,7 @@ const Navigation = () => {
 			<Navbar
 				className='fixed top-0 bg-transparent'
 				maxWidth='2xl'
+				isMenuOpen={isMenuOpen}
 				onMenuOpenChange={setIsMenuOpen}
 				// Customizing classNames for styling the navbar and its items
 				classNames={{
@@ -73,9 +75,9 @@ const Navigation = () => {
 					/>
 					{/* NavbarBrand component for the brand/logo section */}
 					<NavbarBrand className='gap-2'>
-						<ComputerIcon className='text-red-500 hidden lg:block' />
+						<ComputerIcon className='hidden text-red-500 lg:block' />
 						<Link
-							className='font-semi text-xl lg:text-3xl text-inherit'
+							className='font-semi text-xl text-inherit lg:text-3xl'
 							href='/'
 							aria-current='page'>
 							<h1>
@@ -86,7 +88,7 @@ const Navigation = () => {
 				</NavbarContent>
 				{/* NavbarContent for the main navigation links */}
 				<NavbarContent
-					className='hidden sm:flex gap-4'
+					className='hidden gap-4 sm:flex'
 					justify='center'>
 					{/* Mapping through menuItems to create NavbarItem components */}
 					{menuItems.map((item, index) => (
@@ -96,7 +98,7 @@ const Navigation = () => {
 							{/* Link component for each navigation item */}
 							<Link
 								color={'foreground'}
-								className='w-full'
+								className='w-full text-neutral-100'
 								href={`/${item}`.split(' ').join('').toLowerCase()}
 								size='lg'>
 								{item}
@@ -108,19 +110,25 @@ const Navigation = () => {
 				<NavbarContent justify='end'>
 					{/* NavbarItem for the Github link */}
 					<NavbarItem className='flex'>
-						<Link href='https://github.com/WebDevMullins'>
+						<Link
+							href='https://github.com/WebDevMullins'
+							target='_blank'>
 							<GithubIcon className='text-red-500' />
 						</Link>
 					</NavbarItem>
 					{/* NavbarItem for the LinkedIn link */}
 					<NavbarItem className='flex'>
-						<Link href='https://www.linkedin.com/in/brandon-mullins/'>
+						<Link
+							href='https://www.linkedin.com/in/brandon-mullins/'
+							target='_blank'>
 							<LinkedinIcon className='text-red-500' />
 						</Link>
 					</NavbarItem>
 					{/* NavbarItem for the Email link */}
 					<NavbarItem className='flex'>
-						<Link href='mailto:brandon@webdevmullins.com'>
+						<Link
+							href='mailto:brandon@webdevmullins.com'
+							target='_blank'>
 							<MailIcon className='text-red-500' />
 						</Link>
 					</NavbarItem>
@@ -137,7 +145,8 @@ const Navigation = () => {
 								color={'foreground'}
 								className='w-full'
 								href={`/${item}`.split(' ').join('').toLowerCase()}
-								size='lg'>
+								size='lg'
+								onClick={() => setIsMenuOpen(false)}>
 								{item}
 							</Link>
 						</NavbarMenuItem>
