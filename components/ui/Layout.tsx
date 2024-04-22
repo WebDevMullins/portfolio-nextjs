@@ -2,7 +2,7 @@
 
 const Layout = () => {
 	return (
-		<main className="min-h-screen flex flex-col items-center justify-center mx-auto bg-cover bg-[url('/images/bg-blur.png')]">
+		<main className="mx-auto flex min-h-screen flex-col items-center justify-center bg-[url('/images/bg-blur.png')] bg-cover">
 			{/* <Outlet /> */}
 		</main>
 	)

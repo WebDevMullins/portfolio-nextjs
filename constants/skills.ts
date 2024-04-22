@@ -23,7 +23,7 @@ export const skills = [
 		height: 80,
 		width: 80
 	},
-	
+
 	{
 		name: 'JS',
 		img: 'javascript.svg',
@@ -89,6 +89,5 @@ export const skills = [
 		img: 'tailwind.svg',
 		height: 80,
 		width: 80
-	},
-	
+	}
 ]

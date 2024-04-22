@@ -4,7 +4,7 @@ export default function SeconaryLayout({
 	children: React.ReactNode
 }) {
 	return (
-		<main className="min-h-dvh flex flex-col items-center justify-center mx-auto bg-cover bg-[url('/images/bg-blur.png')]">
+		<main className="mx-auto flex min-h-dvh flex-col items-center justify-center bg-[url('/images/bg-blur.png')] bg-cover">
 			{children}
 		</main>
 	)
